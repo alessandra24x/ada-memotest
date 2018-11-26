@@ -1,22 +1,22 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
   // Variables declaradas con const, se supone nunca cambian.
   const WON = 'won';
   const LOST = 'lost';
 
   const images = [
-    {name: "alce", path: "img/alce.jpg", id: 1},
-    {name: "elefante", path: "img/elefante.jpg", id: 2},
-    {name: "nena", path: "img/nena.jpg", id: 3},
-    {name: "peces", path: "img/peces.jpg", id: 4},
-    {name: "unichancho", path: "img/unichancho.jpg", id: 5},
-    {name: "zapas", path: "img/zapas.jpg", id: 6},
-    {name: "alce", path: "img/alce.jpg", id: 7},
-    {name: "elefante", path: "img/elefante.jpg", id: 8},
-    {name: "nena", path: "img/nena.jpg", id: 9},
-    {name: "peces", path: "img/peces.jpg", id: 10},
-    {name: "unichancho", path: "img/unichancho.jpg", id: 11},
-    {name: "zapas", path: "img/zapas.jpg", id: 12}
+    { name: "alce", path: "img/alce.jpg", id: 1 },
+    { name: "elefante", path: "img/elefante.jpg", id: 2 },
+    { name: "nena", path: "img/nena.jpg", id: 3 },
+    { name: "peces", path: "img/peces.jpg", id: 4 },
+    { name: "unichancho", path: "img/unichancho.jpg", id: 5 },
+    { name: "zapas", path: "img/zapas.jpg", id: 6 },
+    { name: "alce", path: "img/alce.jpg", id: 7 },
+    { name: "elefante", path: "img/elefante.jpg", id: 8 },
+    { name: "nena", path: "img/nena.jpg", id: 9 },
+    { name: "peces", path: "img/peces.jpg", id: 10 },
+    { name: "unichancho", path: "img/unichancho.jpg", id: 11 },
+    { name: "zapas", path: "img/zapas.jpg", id: 12 }
   ];
   const NAME_REQUIRED_ERROR = 'UPSS...El nombre es requerido.';
   const gameHeader = $('.game-header');
@@ -80,7 +80,7 @@ $(document).ready(function() {
       }
 
       // Hacemos que se esconda luego de 3 segundos.
-      setTimeout(function() {
+      setTimeout(function () {
         $('.error-message-container').hide();
       }, 3000);
 
@@ -93,7 +93,7 @@ $(document).ready(function() {
   // Funcion para mostrar el mensaje de "bienvenida" al juego
   function setWelcomeMessage() {
     const welcome = $(`<p class="welcome">Hola ${playerName}
-                        <br/>Encontra todos los pares en menos de <span class="text">${maxTries}</span> intentos<br/>Nivel<br/>${gameDifficulty.difficultyName}
+                        <br/>Encontra todos los pares en menos de <span class="text">${gameDifficulty.maxTries}</span> intentos<br/>Nivel<br/>${gameDifficulty.difficultyName}
                     </p>`);
     gameHeader.append(welcome);
   }
@@ -206,7 +206,7 @@ $(document).ready(function() {
     let id; // Id de la carta
 
     // Cuando es el primero click, solo guardamos la info de la carta y el selector de la carta(viene por parametro)
-    const firstClick = function(clickedCard) {
+    const firstClick = function (clickedCard) {
       carta1 = {
         src: imgSrc,
         id: id,
@@ -215,7 +215,7 @@ $(document).ready(function() {
     };
 
     // En el segundo click, se hacen mas cosas, recibe la carta clickeada como parametro
-    const secondClick = function(clickedCard) {
+    const secondClick = function (clickedCard) {
       clicks = 0; // Reiniciamos los clicks a 0
       currentTryCount++; // Subimos el contador de jugadas
       playAllowed = false; // Seteamos false, para que no se pueda jugar hasta que termine de manejarse este segundo click.
@@ -238,7 +238,7 @@ $(document).ready(function() {
       } else {
 
         // Si no hay match, ponemos un timeout para que se den vuelta de nuevo
-        setTimeout(function() {
+        setTimeout(function () {
           carta1.selector.find('.flip-card').removeClass('flip-card-flipped');
           carta2.selector.find('.flip-card').removeClass('flip-card-flipped');
 
@@ -252,7 +252,7 @@ $(document).ready(function() {
       checkEndGame();
     };
 
-    const checkEndGame = function() {
+    const checkEndGame = function () {
 
       // Si hay 12 cartas con "match", significa que gano
       if ($('.match').length === 12) {
@@ -264,7 +264,7 @@ $(document).ready(function() {
     };
 
     // El evento de click en la carta
-    cardContainer.on('click', function() {
+    cardContainer.on('click', function () {
 
       // Tomamos como selector la carta clikeada
       let clickedCard = $(this);
@@ -302,7 +302,7 @@ $(document).ready(function() {
   function startGame() {
 
     // funcion que setea el evento del boton de dificultad, para empezar el juego
-    startGameButton.on('click', function() {
+    startGameButton.on('click', function () {
       playerName = $('#player-name').val();
 
       // llamamos a la funcion para validar el nombre, si retorna false, no seguimos, no hacemos nada (se muestra el mensaje de error, etc)
@@ -338,7 +338,7 @@ $(document).ready(function() {
   startGame();
 
   // Si se hace click en jugar de nuevo, se recarga la pagina.
-  $('#play-again').click(function() {
+  $('#play-again').click(function () {
     window.location.reload();
   });
 
