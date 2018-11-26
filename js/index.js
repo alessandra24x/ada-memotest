@@ -133,7 +133,7 @@ $(document).ready(function () {
     images.sort(() => Math.random() - 0.5);
 
     for (let i = 0; i < 12; i++) {
-      let hiddenCard = $(`<div data-card-id="${images[i].id}" class="col-4 col-lg-3 flipWrapper">
+      let hiddenCard = $(`<div data-card-id="${images[i].id}" class="col-4 col-sm-4 col-md-3 col-lg-3 col-xl-3 flipWrapper">
                               <div class="flip-card">
                                 <div class="face front">
                                     <img src="img/tapada.jpg"/>

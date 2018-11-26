@@ -212,7 +212,7 @@ p {
 table {
     display: flex;
     justify-content: center;
-    width: 75%;
+    width: 90%;
     margin: auto;
     border: solid 1px;
     margin-bottom: 7rem;
@@ -243,5 +243,17 @@ td:last-child {
     }
     .game-board-container {
         width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .wrapper-start {
+        width: 60%;
+    }
+    .wrapper-game {
+        width: 60%;
+    }
+    .game-board-container {
+        width: 60%;
     }
 }

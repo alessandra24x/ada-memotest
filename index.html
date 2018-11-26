@@ -19,7 +19,7 @@
                 <p>Hola <span><img src="img/hand-waving.png"></span>! vamos a jugar al memotest<br>pero antes de
                     empezar<br>Cual
                     es tu nombre <span class="icon-question"><img src="img/question-mark.png" width="10px" height="auto"></span></p>
-                <input id="player-name" type="text" placeholder="Natalia">
+                <input id="player-name" type="text" maxlength="10" placeholder="Natalia">
                 <p>Con que dificultad te gustaria jugar?</p>
                 <div class="button-difficulty">
                     <button id="easy">FACIL</button>
@@ -35,29 +35,29 @@
         </div>
     </div>
     <!-- The Modal -->
-    <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <p class="modal-title"></p>
-                    <p class="col-12 cols-sm-12 col-md-12">Ya podes volver a jugar</p>
+    <div class="modal fade" id="myModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <p class="modal-title"></p>
+                <p class="col-12 col-sm-12 col-md-12">Ya podes volver a jugar</p>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-8 col-sm-4 col-md-4 ml-auto button-difficulty">
+                    <button id="play-again">VOLVER A JUGAR</button>
                 </div>
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <div class="col-8 col-sm-4 col-md-4 ml-auto button-difficulty">
-                        <button id="play-again">VOLVER A JUGAR</button>
-                    </div>
-                    <table id="ranking">
-                        <tr>
-                            <th>NOMBRE</th>
-                            <th>NIVEL</th>
-                            <th>INTENTOS</th>
-                        </tr>
-                    </table>
-                </div>
+                <table id="ranking">
+                    <tr>
+                        <th>NOMBRE</th>
+                        <th>NIVEL</th>
+                        <th>INTENTOS</th>
+                    </tr>
+                </table>
             </div>
         </div>
+    </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
