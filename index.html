@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Mali|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Memotest</title>
+    </script>
+</head>
+
+<body>
+    <div class="wrapper-start">
+        <div class="main">
+            <h2>Memotest</h2>
+            <div class="main-content">
+                <p>Hola <span><img src="img/hand-waving.png"></span>! vamos a jugar al memotest</br>pero antes de
+                    empezar</br>Cual
+                    es tu nombre <span class="icon-question"><img src="img/question-mark.png" width="10px" height="auto"></span></p>
+                <input id="player-name" type="text" placeholder="Natalia">
+                <p>Con que dificultad te gustaria jugar?</p>
+                <div class="button-difficulty">
+                    <button id="easy">FACIL</button>
+                    <button id="medium">INTERMEDIO</button>
+                    <button id="hard">EXPERTO</button>
+                </div>
+            </div>
+        </div>
+        <div class="game-header"></div>
+        <div class="container game-board-container">
+            <div class="row" id="game-board"></div>
+            <div class="row" id="try-count-container"></div>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <p class="modal-title"></p>
+                    <p class="col-4 cols-sm-12 col-md-12">Ya podes volver a jugar</p>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="col-4 col-sm-3 col-md-4 ml-auto button-difficulty">
+                        <button id="play-again">VOLVER A JUGAR</button>
+                    </div>
+
+
+                    <table id="ranking">
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>NIVEL</th>
+                            <th>INTENTOS</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                crossorigin="anonymous"></script>
+            <script src="js/bootstrap.min.js"></script>
+
+            <script src="js/index.js"></script>
+</body>
+
+</html>

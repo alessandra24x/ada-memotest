@@ -1,0 +1,247 @@
+$paragraph: 'Mali',
+cursive;
+$title: 'Pacifico',
+cursive;
+$background: #95CFD8;
+$color: white;
+@mixin text {
+    font: {
+        family: $paragraph;
+        size: 16px;
+    }
+    color: $color;
+}
+
+@mixin border {
+    border-right: solid 1px;
+    text-align: center;
+    font-family: $paragraph;
+    margin-bottom: 1rem;
+    width: 10rem;
+}
+
+@mixin border-right {
+    border-right: none;
+}
+
+%wrapper-main {
+    background-color: $background;
+    margin: auto;
+    border: solid 10px;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+body {
+    background-image: url("../img/fondo.jpg");
+}
+
+.wrapper-start {
+    @extend %wrapper-main;
+    width: 40%;
+}
+
+.wrapper-game {
+    @extend %wrapper-main;
+    width: 70%;
+}
+
+.icon-question {
+    width: 10px;
+    height: 10px;
+}
+
+h2 {
+    font-family: $title;
+    color: #DD0873;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.main-content {
+    text-align: center;
+}
+
+p {
+    font-family: $paragraph;
+}
+
+#player-name {
+    width: 80%;
+    height: 1.5rem;
+}
+
+.button-difficulty {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    padding: 0;
+    button {
+        margin-bottom: 0.7rem;
+        border-radius: 0.7rem;
+        background-color: #DDE715;
+        height: 2.5rem;
+        @include text;
+    }
+}
+
+.error-message-container {
+    background-color: #D6A6CC;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 3rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.4rem;
+    .error-message {
+        @include text;
+        margin: auto;
+    }
+}
+
+.game-header {
+    text-align: center;
+    .text {
+        color: blue;
+    }
+}
+
+.game-board-container {
+    width: 65%;
+    .game-board-container {
+        margin-left: 0.2rem;
+        margin-right: 0.2rem;
+    }
+}
+
+.flip-card-destapada {
+    height: 130px;
+    img {
+        width: 100%;
+        height: auto;
+        border: 1px solid orange;
+    }
+}
+
+.flipWrapper {
+    -webkit-perspective: 1000;
+    width: 100%;
+    position: relative;
+    height: 8rem;
+}
+
+.flipWrapper .flip-card.flip-card-flipped {
+    -webkit-transform: rotatey(180deg);
+}
+
+.flipWrapper .flip-card {
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    img {
+        width: 100%;
+        height: auto;
+        border: 1px solid orange;
+    }
+}
+
+.flipWrapper .flip-card .face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    z-index: 2;
+    font-family: Georgia;
+    font-size: 3em;
+    text-align: center; // line-height: 200px;
+}
+
+.flipWrapper .flip-card .front {
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.flipWrapper .flip-card .back {
+    -webkit-transform: rotatey(-180deg);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.match {
+    filter: grayscale(100%);
+}
+
+#try-count-container {
+    div {
+        text-align: center;
+        background-color: white;
+        border-radius: 10px;
+        border: solid blue;
+        margin-bottom: 10px;
+        padding: 5px;
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.modal-content {
+    background-color: $background;
+    border: solid 5px;
+    border-radius: 20px;
+    .modal-header {
+        display: block;
+        border: none;
+        padding-bottom: 0;
+        p {
+            text-align: center;
+        }
+    }
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    margin: auto;
+    border: solid 1px;
+    margin-bottom: 7rem;
+    th {
+        @include border;
+    }
+    td {
+        @include border;
+    }
+}
+
+th:last-child {
+    @include border-right;
+}
+
+td:last-child {
+    @include border-right;
+}
+
+@media (max-width: 576px) {
+    .wrapper-start {
+        @extend %wrapper-main;
+        width: 100%;
+    }
+    .wrapper-game {
+        @extend %wrapper-main;
+        width: 100%;
+    }
+    .game-board-container {
+        width: 100%;
+    }
+}
